@@ -1,0 +1,28 @@
+{
+  "name": "ng2-combosearch",
+  "version": "1.0.1",
+  "description": "Component combo search to angular 2",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@angular/core": "^2.0.0-rc.1"
+  },
+  "scripts": {
+    "prepublish": "tsc",
+    "pubtest": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fssolutions/ng2-combosearch.git"
+  },
+  "keywords": [
+    "angular2",
+    "wizard"
+  ],
+  "author": "fssolutions",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fssolutions/ng2-combosearch/issues"
+  },
+  "homepage": "https://github.com/fssolutions/ng2-combosearch#readme"
+}
