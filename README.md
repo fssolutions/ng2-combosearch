@@ -1,9 +1,9 @@
- [![npm version](https://badge.fury.io/js/ng2-combosearch.svg)](https://badge.fury.io/js/ng2-combosearch)
+[![npm version](https://badge.fury.io/js/ng2-combosearch.svg)](https://badge.fury.io/js/ng2-combosearch)
 
- # ComboSearchComponent
+# ComboSearchComponent
  @version 1.0.1
 
- Component combo search for Angular 2.
+Component combo search for Angular 2.
 ```
  <combo-search nameDescription="var string" [startFill]="[true|false|yes|no]" [modelList]="var [Array<any>]" [(cpModel)]="var [any]" (searchText)="onYourFunction($event)" (selectItem)="onYourFunction($event)">
    <template let-currentItem>
@@ -12,8 +12,8 @@
  </combo-search>
 ```
 
- ## Example
- ### Template (.html)
+## Example
+### Template (.html)
 ```
  <combo-search nameDescription="nameModelToShow" startFill="yes" [modelList]="modelList" (searchText)="onSearchText($event)" (selectItem)="onSelectItem($event)"></combo-search>
 
@@ -23,13 +23,13 @@
    </template>
  </combo-search>
 ```
- ### TypeScript (.ts)
+### TypeScript (.ts)
  Import ComboSearchComponent
 ```
  import { ComboSearchComponent } from 'ng2-combosearch;
 ```
 
- #### Add in your directives
+#### Add in your directives
 ```
  directives: [ ComboSearchComponent ]
 ```
@@ -46,7 +46,7 @@
  private onSelectItem(value: any){};
 ```
 
- ### Complete Code
+### Complete Code
 ```
  ...
  import { ComboSearchComponent } from './your/path/combo-search.component';
