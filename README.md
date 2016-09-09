@@ -1,18 +1,18 @@
 [![npm version](https://badge.fury.io/js/ng2-combosearch.svg)](https://badge.fury.io/js/ng2-combosearch)
 
 # ComboSearchComponent
- @version 1.0.1
- @author: Flávio Silva
+ @version 1.0.1 <br>
+ @author: Flávio Silva <br>
  @link: [https://github.com/fssolutions/ng2-combosearch](https://github.com/fssolutions/ng2-combosearch)
 
- ## Installation
+## Installation
 
  TypeDoc runs on angular 2 and is available as an NPM package. You can install ng2-combosearch
  in your project's directory as usual:
 
- ```bash
- $ npm install --save ng2-combosearch
- ```
+```bash
+$ npm install --save ng2-combosearch
+```
 
 Component combo search for Angular 2.
 ```
