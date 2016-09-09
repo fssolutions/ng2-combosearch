@@ -2,6 +2,17 @@
 
 # ComboSearchComponent
  @version 1.0.1
+ @author: Flávio Silva
+ @link: [https://github.com/fssolutions/ng2-combosearch](https://github.com/fssolutions/ng2-combosearch)
+
+ ## Installation
+
+ TypeDoc runs on angular 2 and is available as an NPM package. You can install ng2-combosearch
+ in your project's directory as usual:
+
+ ```bash
+ $ npm install --save ng2-combosearch
+ ```
 
 Component combo search for Angular 2.
 ```
@@ -19,14 +30,14 @@ Component combo search for Angular 2.
 
  <combo-search nameDescription="nameModelToShow" startFill="yes" [modelList]="modelList" (searchText)="onSearchText($event)" (selectItem)="onSelectItem($event)">
    <template let-myVar>
-     <div><b>{{myVar.Id}}<b> - {{myVar.Name}}({{myVar.User}})</div>
+     <div><b>{{myVar.Id}}</b> - {{myVar.Name}}({{myVar.User}})</div>
    </template>
  </combo-search>
 ```
 ### TypeScript (.ts)
  Import ComboSearchComponent
 ```
- import { ComboSearchComponent } from 'ng2-combosearch;
+ import { ComboSearchComponent } from 'ng2-combosearch';
 ```
 
 #### Add in your directives
@@ -49,7 +60,7 @@ Component combo search for Angular 2.
 ### Complete Code
 ```
  ...
- import { ComboSearchComponent } from './your/path/combo-search.component';
+ import { ComboSearchComponent } from 'ng2-combosearch';
 
  ...
  directives: [ ComboSearchComponent ]
@@ -62,8 +73,9 @@ Component combo search for Angular 2.
       { Id: 2, Name: 'My Name', User: 'my.user', ImgProfile: '11652-589-5-195.png'}
   ];
 
-  private searchText(value: string){
-    console.info("Searching for: ", value)
+  private onSearchText(value: string){
+    console.info("Searching for: ", value);
+    // Load new model, when your search on demand;
   };
 
   private onSelectItem(value: any){
@@ -71,3 +83,14 @@ Component combo search for Angular 2.
   };
  }
 ```
+## Contributing
+
+Contributions are welcome and appreciated. You can find ng2-combosearch on GitHub, feel free to start
+an issue or create a pull requests:<br>
+[https://github.com/fssolutions/ng2-combosearch](https://github.com/fssolutions/ng2-combosearch)
+
+
+## License
+
+Copyright (c) 2016 Flávio Silva [fssolutions](http://www.flaviosilva.net).<br>
+Licensed under the MIT License (MIT)

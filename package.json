@@ -1,6 +1,6 @@
 {
   "name": "ng2-combosearch",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Component combo search to angular 2",
   "main": "index.js",
   "dependencies": {},
@@ -17,7 +17,9 @@
   },
   "keywords": [
     "angular2",
-    "wizard"
+    "combo search",
+    "combo ondemand",
+    "search box"
   ],
   "author": "fssolutions",
   "license": "MIT",

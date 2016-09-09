@@ -3,12 +3,14 @@
 /**
  * # ComboSearchComponent
  * @version 1.0.1
+ * @author: Flávio Silva
+ * @link: [https://github.com/fssolutions/ng2-combosearch](https://github.com/fssolutions/ng2-combosearch)
  *
  * Component combo search for Angular 2.
  *```
  * <combo-search nameDescription="var string" [startFill]="[true|false|yes|no]" [modelList]="var [Array<any>]" [(cpModel)]="var [any]" (searchText)="onYourFunction($event)" (selectItem)="onYourFunction($event)">
  *   <template let-currentItem>
- *     <div><b>{{currentItem.Property1}}<b> - {{currentItem.Propery2}}</div>
+ *     <div><b>{{currentItem.Property1}}</b> - {{currentItem.Propery2}}</div>
  *   </template>
  * </combo-search>
  *```
@@ -27,7 +29,7 @@
  * ### TypeScript (.ts)
  * Import ComboSearchComponent
  *```
- * import { ComboSearchComponent } from './your/path/combo-search.component';
+ * import { ComboSearchComponent } from 'ng2-combosearch';
  *```
  *
  * #### Add in your directives
@@ -50,7 +52,7 @@
  * ### Complete Code
  *```
  * ...
- * import { ComboSearchComponent } from './your/path/combo-search.component';
+ * import { ComboSearchComponent } from 'ng2-combosearch';
  *
  * ...
  * directives: [ ComboSearchComponent ]
