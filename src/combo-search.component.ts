@@ -22,7 +22,7 @@
  *
  * <combo-search nameDescription="nameModelToShow" startFill="yes" [modelList]="modelList" (searchText)="onSearchText($event)" (selectItem)="onSelectItem($event)">
  *   <template let-myVar>
- *     <div><b>{{myVar.Id}}<b> - {{myVar.Name}}({{myVar.User}})</div>
+ *     <div><b>{{myVar.Id}}</b> - {{myVar.Name}}({{myVar.User}})</div>
  *   </template>
  * </combo-search>
  *```
@@ -80,7 +80,7 @@
     template: `
         <div class="combo-search">
             <div *ngIf="defauls.startFill" class="ic-down"><span class="glyphicon glyphicon-chevron-down"></span></div>
-            <input type="text" id="{{id}}" class="form-control" placeholder="{{placeHolder}}" #searchInput (focus)="showList()" (blur)="hiddenList()" (keydown)="manageList(searchInput.value, $event)" (keyup)="search(searchInput.value, $event)">
+            <input type="text" id="{{id}}" class="form-control" placeholder="{{placeHolder}}" [disabled]="disabled" #searchInput (focus)="showList()" (blur)="hiddenList()" (keydown)="manageList(searchInput.value, $event)" (keyup)="search(searchInput.value, $event)">
             <div *ngIf="itemsFilter && itemsFilter.length > 0 && hasFocus" class="list-dropdown">
                 <ul #listOption>
                     <li (click)="onSelect(item); searchInput.value = item[nameDescription];" *ngFor="let item of itemsFilter" [ngClass]="{active: item.active}">
@@ -150,6 +150,7 @@ export class ComboSearchComponent implements AfterViewInit {
 
     @Input() nameDescription: string;
     @Input() placeHolder: string;
+    @Input() disabled: boolean;
     @Input() id: string;
     @Input()
     set modelList(model: Array<any>) {
