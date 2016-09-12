@@ -1,0 +1,15 @@
+<div class="combo-search">
+		<div *ngIf="defauls.startFill" class="ic-down"><span class="glyphicon glyphicon-chevron-down"></span></div>
+		<input type="text" id="{{id}}" class="form-control" placeholder="{{placeHolder}}" [disabled]="disabled" #searchInput (focus)="showList()" (blur)="hiddenList()" (keydown)="manageList(searchInput.value, $event)" (keyup)="search(searchInput.value, $event)">
+		<div *ngIf="itemsFilter && itemsFilter.length > 0 && hasFocus" class="list-dropdown">
+				<ul #listOption>
+						<li (click)="onSelect(item); searchInput.value = item[nameDescription];" *ngFor="let item of itemsFilter" [ngClass]="{active: item.active}">
+								<div *ngIf="!itemTemplate">{{item[nameDescription]}}</div>
+								<template *ngIf="itemTemplate" ngFor [ngForOf]="[item]" [ngForTemplate]="itemTemplate"></template>
+						</li>
+				</ul>
+				<div (mouseover)="lockFocus = true" (mouseout)="lockFocus = false">
+						<ng-content></ng-content>
+				</div>
+		<div>
+</div>

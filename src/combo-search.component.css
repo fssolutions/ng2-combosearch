@@ -1,0 +1,33 @@
+div.combo-search{
+		position: relative !important;
+}
+div div.ic-down{
+		position: absolute;
+		right: 10px;
+		top: 8px;
+		z-index: 3;
+}
+.active, .list-dropdown li:hover{
+		background-color: #efefef;
+}
+.list-dropdown{
+		position: absolute;
+		top: 34px;
+		width: 100%;
+		z-index: 10;
+		border: 1px solid silver;
+		border-top: none;
+		background-color: white;
+}
+.list-dropdown ul{
+		overflow-y: auto;
+		max-height: 250px;
+		padding: 4px;
+		margin: 0 !important;
+}
+
+.list-dropdown li {
+		list-style-type: none;
+		margin: 0px;
+		padding: 4px;
+}

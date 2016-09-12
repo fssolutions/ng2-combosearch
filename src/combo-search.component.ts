@@ -1,4 +1,4 @@
-﻿import { Component, AfterViewInit, Input, Output, EventEmitter, ViewChild, ContentChild, ViewContainerRef, ElementRef, TemplateRef } from '@angular/core';
+﻿import { Component, AfterViewInit, Input, Output, EventEmitter, ViewChild, ContentChild, ElementRef, TemplateRef } from '@angular/core';
 
 /**
  * # ComboSearchComponent
@@ -77,58 +77,10 @@
  */
 @Component({
     selector: 'combo-search',
-    template: `
-        <div class="combo-search">
-            <div *ngIf="defauls.startFill" class="ic-down"><span class="glyphicon glyphicon-chevron-down"></span></div>
-            <input type="text" id="{{id}}" class="form-control" placeholder="{{placeHolder}}" [disabled]="disabled" #searchInput (focus)="showList()" (blur)="hiddenList()" (keydown)="manageList(searchInput.value, $event)" (keyup)="search(searchInput.value, $event)">
-            <div *ngIf="itemsFilter && itemsFilter.length > 0 && hasFocus" class="list-dropdown">
-                <ul #listOption>
-                    <li (click)="onSelect(item); searchInput.value = item[nameDescription];" *ngFor="let item of itemsFilter" [ngClass]="{active: item.active}">
-                        <div *ngIf="!itemTemplate">{{item[nameDescription]}}</div>
-                        <template *ngIf="itemTemplate" ngFor [ngForOf]="[item]" [ngForTemplate]="itemTemplate"></template>
-                    </li>
-                </ul>
-                <div (mouseover)="lockFocus = true" (mouseout)="lockFocus = false">
-                    <ng-content></ng-content>
-                </div>
-            <div>
-        </div>
-    `,
-    styles: [`
-        div.combo-search{
-            position: relative !important;
-        }
-        div div.ic-down{
-            position: absolute;
-            right: 10px;
-            top: 8px;
-            z-index: 3;
-        }
-        .active, .list-dropdown li:hover{
-            background-color: #efefef;
-        }
-        .list-dropdown{
-            position: absolute;
-            top: 34px;
-            width: 100%;
-            z-index: 10;
-            border: 1px solid silver;
-            border-top: none;
-            background-color: white;
-        }
-        .list-dropdown ul{
-            overflow-y: auto;
-            max-height: 250px;
-            padding: 4px;
-            margin: 0 !important;
-        }
-
-        .list-dropdown li {
-            list-style-type: none;
-            margin: 0px;
-            padding: 4px;
-        }
-    `]
+    styleUrls: [
+      'combo-search.component.css'
+    ],
+    templateUrl: 'combo-search.component.html'
 })
 export class ComboSearchComponent implements AfterViewInit {
     private hasFocus: boolean = false;
