@@ -1,8 +1,8 @@
-﻿import { Component, AfterViewInit, Input, Output, EventEmitter, ViewChild, ContentChild, ElementRef, TemplateRef } from '@angular/core';
+import { Component, AfterViewInit, Input, Output, EventEmitter, ViewChild, ContentChild, ElementRef, TemplateRef } from '@angular/core';
 
 /**
  * # ComboSearchComponent
- * @version 1.0.1
+ * @version 1.0.2
  * @author: Flávio Silva
  * @link: [https://github.com/fssolutions/ng2-combosearch](https://github.com/fssolutions/ng2-combosearch)
  *
@@ -62,7 +62,7 @@
  *  private nameModelToShow: string = "Name";
  *  private modelList: Array<any> = [
  *      { Id: 1, Name: 'My Name', User: 'my.user', ImgProfile: '11652-589-5-689.png'},
- *      { Id: 2, Name: 'My Name', User: 'my.user', ImgProfile: '11652-589-5-195.png'}
+ *      { Id: 2, Name: 'My Second Name', User: 'my.user', ImgProfile: '11652-589-5-195.png'}
  *  ];
  *
  *  private searchText(value: string){
@@ -405,11 +405,9 @@ export class ComboSearchComponent implements AfterViewInit {
         if (item == null)
             return;
 
-        this.itemsFilter.forEach(x => { x.active = false });
-        item.active = true;
         this.itemSelect = item;
         if (this.searchInput)
-            this.searchInput.nativeElement.value = item[this.nameDescription];
+            this.searchInput.nativeElement.value = item[this.nameDescription] || '';
 
         if (autoFire) {
             this.selectItem.emit(item);
