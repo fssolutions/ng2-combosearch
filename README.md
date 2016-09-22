@@ -16,7 +16,7 @@ $ npm install --save ng2-combosearch
 
 Component combo search for Angular 2.
 ```
- <combo-search nameDescription="var string" [startFill]="[true|false|yes|no]" [modelList]="var [Array<any>]" [(cpModel)]="var [any]" (searchText)="onYourFunction($event)" (selectItem)="onYourFunction($event)">
+ <combo-search nameDescription="var string" [startFill]="[true|false|yes|no]" [onDemand]="[true|false|yes|no]" [modelList]="var [Array<any>]" [(cpModel)]="var [any]" (searchText)="onYourFunction($event)" (selectItem)="onYourFunction($event)">
    <template let-currentItem>
      <div><b>{{currentItem.Property1}}</b> - {{currentItem.Propery2}}</div>
    </template>
