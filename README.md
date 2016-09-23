@@ -7,7 +7,7 @@
 
 ## Installation
 
- TypeDoc runs on angular 2 and is available as an NPM package. You can install ng2-combosearch
+ Combosearch runs on angular 2 and is available as an NPM package. You can install ng2-combosearch
  in your project's directory as usual:
 
 ```bash
