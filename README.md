@@ -1,7 +1,7 @@
 [![npm version](https://badge.fury.io/js/ng2-combosearch.svg)](https://badge.fury.io/js/ng2-combosearch)
 
 # ComboSearchComponent
- @version 1.0.1 <br>
+ @version 2.0.0 <br>
  @author: Flávio Silva <br>
  @link: [https://github.com/fssolutions/ng2-combosearch](https://github.com/fssolutions/ng2-combosearch)
 
@@ -37,12 +37,16 @@ Component combo search for Angular 2.
 ### TypeScript (.ts)
  Import ComboSearchComponent
 ```
- import { ComboSearchComponent } from 'ng2-combosearch';
+ import { Ng2ComboSearchModule } from 'ng2-combosearch';
 ```
 
-#### Add in your directives
+#### Add in your module
 ```
- directives: [ ComboSearchComponent ]
+  @NgModule({   
+    imports: [
+     Ng2ComboSearchModule,
+    ]
+  })
 ```
 
  Create var to bind
@@ -60,10 +64,14 @@ Component combo search for Angular 2.
 ### Complete Code
 ```
  ...
- import { ComboSearchComponent } from 'ng2-combosearch';
+ import { Ng2ComboSearchModule } from 'ng2-combosearch';
 
  ...
- directives: [ ComboSearchComponent ]
+   @NgModule({   
+     imports: [
+      Ng2ComboSearchModule,
+     ]
+   })
 
  ...
  export class YourClass{

@@ -2,7 +2,7 @@ import { Component, AfterViewInit, Input, Output, EventEmitter, ViewChild, Conte
 
 /**
  * # ComboSearchComponent
- * @version 1.0.2
+ * @version 2.0
  * @author: Flávio Silva
  * @link: [https://github.com/fssolutions/ng2-combosearch](https://github.com/fssolutions/ng2-combosearch)
  *
@@ -79,9 +79,9 @@ import { Component, AfterViewInit, Input, Output, EventEmitter, ViewChild, Conte
     moduleId: module.id,
     selector: 'combo-search',
     styleUrls: [
-      'combo-search.component.css'
+      './combo-search.component.css'
     ],
-    templateUrl: 'combo-search.component.html'
+    templateUrl: './combo-search.component.html'
 })
 export class ComboSearchComponent implements AfterViewInit {
     private hasFocus: boolean = false;
@@ -104,15 +104,17 @@ export class ComboSearchComponent implements AfterViewInit {
     @Input() nameDescription: string;
     @Input() placeHolder: string;
     @Input() disabled: boolean;
+    @Input() required: any;
     @Input() id: string;
+    @Input() name: string;
     @Input()
     set modelList(model: Array<any>) {
         if (this.items != null && this.items.length > 0)
             this.defauls.onDemand = true;
 
         this.items = model;
-
-        this.ngAfterViewInit();
+        this.itemsFilter = this.items;
+        //this.ngAfterViewInit();
     }
     @Input()
     set startFill(value: any) {
@@ -202,7 +204,7 @@ export class ComboSearchComponent implements AfterViewInit {
 
     private hiddenList() {
         clearTimeout(this.toutHiddenList);
-        this.toutHiddenList = setTimeout(() => {
+        this.toutHiddenList = window.setTimeout(() => {
             if (!this.lockFocus) {
                 this.hasFocus = false;
                 this.lockFocus = false;
@@ -215,7 +217,7 @@ export class ComboSearchComponent implements AfterViewInit {
         this.hasFocus = true;
         this.lockFocus = false;
 
-        setTimeout(() => {
+        window.setTimeout(() => {
             let i = this.itemsFilter.indexOf(this.itemSelect);
             if (i > -1)
                 this.listOption.nativeElement.scrollTop = this.listOption.nativeElement.children[i].offsetTop;
@@ -240,8 +242,8 @@ export class ComboSearchComponent implements AfterViewInit {
 
     private configBind() {
         if (this.itemSelected != null) {
-            if (!this.defauls.onDemand)
-                this.onSelect(this.itemSelected);
+            //if (!this.defauls.onDemand)
+                this.onSelect(this.itemSelected, false);
 
             this.defauls.startFill = true;
         }
@@ -402,7 +404,7 @@ export class ComboSearchComponent implements AfterViewInit {
                 this.itemsFilter = this.items;
 
             if ((keyCode > 46 && keyCode < 112) || keyCode == 8)
-                this.tout = setTimeout(() => {
+                this.tout = window.setTimeout(() => {
                     this.searchText.emit(text);
                     this.manageCombo(text, event);
                 }, 350);
@@ -415,7 +417,11 @@ export class ComboSearchComponent implements AfterViewInit {
 
         this.itemSelect = item;
         if (this.searchInput)
-            this.searchInput.nativeElement.value = item[this.nameDescription] || '';
+          if(this.nameDescription.indexOf("{") >= 0){
+    				let pre_format = this.nameDescription.replace(/{([^}]+)}/g, "${item.$1}");
+    				this.searchInput.nativeElement.value = eval("`"+pre_format+"`") || '';
+    			}else
+              this.searchInput.nativeElement.value = item[this.nameDescription] || '';
 
         if (autoFire) {
             this.selectItem.emit(item);
