@@ -1,7 +1,7 @@
 [![npm version](https://badge.fury.io/js/ng2-combosearch.svg)](https://badge.fury.io/js/ng2-combosearch)
 
 # ComboSearchComponent
- @version 2.0.0 <br>
+ @version 2.0.2 <br>
  @author: Flávio Silva <br>
  @link: [https://github.com/fssolutions/ng2-combosearch](https://github.com/fssolutions/ng2-combosearch)
 
