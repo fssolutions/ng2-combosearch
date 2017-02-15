@@ -76,7 +76,6 @@ import { Component, AfterViewInit, Input, Output, EventEmitter, ViewChild, Conte
  *```
  */
 @Component({
-    moduleId: module.id,
     selector: 'combo-search',
     styleUrls: [
       './combo-search.component.css'
